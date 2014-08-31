@@ -1,8 +1,61 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: rgb(249, 221, 202);
+    color: rgb(114, 29, 53);
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+    color: rgb(237, 119, 81);
+}
+
+a:hover, a:focus {
+    color: rgb(237, 119, 81);
+    opacity: .7;
+}
+
+.jumbotron, .footer-inner {
+    background-color: rgb(41, 22, 43);
+    color: rgb(233, 132, 87)
+}
+
+.breadcrumb {
+    background-color: rgb(41, 22, 43);
+    color: rgb(233, 132, 87);
+}
+
+.breadcrumb > .active {
+    color: #fff;
+}
+
+.media {
+    background-color: #fff;
+    padding: 20px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.footer-inner {
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.page-header {
+    border-bottom-color: rgb(41, 22, 43);;
+}
+
+.content {
+    margin-bottom: 20px;
 }

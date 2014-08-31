@@ -1,5 +1,7 @@
 extends layout
 block content
-    h1= title
-    p Welcome to #{title}
-    pre!=content.body
+    ol.breadcrumb
+        li: a(href="/") Home
+        li.active=content.title
+    .page-header: h1=content.title
+    .content!=content.body

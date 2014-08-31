@@ -1,7 +1,12 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+    head
+        title=content.title
+        link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        main: .container: .row: .col-xs-12
+            block content
+        footer
+            .container: .row: .col-xs-12
+                .footer-inner &copy; 2014

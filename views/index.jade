@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    .jumbotron
+        h1 Welcome to #{content.title}
+    .content!=content.body
+    if content.children.length > 0
+        .row
+            each item in content.children
+                .col-sm-6
+                    .media
+                        .media-body
+                            a(href=item.path)=item.title
+                            p!=item.lead

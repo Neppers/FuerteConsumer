@@ -2,17 +2,17 @@ var express = require('express');
 var http = require('http');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+    res.redirect('/index');
 });
 
-/* GET all other pages */
+/* GET all pages */
 router.get(/(.*)$/, function(req, res, next) {
+
     var options = {
         host: '127.0.0.1',
         port: 3000,
-        path: 'api/content/' + req.params[0],
+        path: 'api/content' + req.params[0],
         method: 'GET'
     };
 
@@ -23,12 +23,16 @@ router.get(/(.*)$/, function(req, res, next) {
             buffer += c;
         });
         response.on('end', function(err) {
-            res.render('content', {
-                content: JSON.parse(buffer)
-            });
+            var content = JSON.parse(buffer);
+            if (content.status === 404) {
+                return next(new Error(404));
+            } else {
+                res.render(content.template, {
+                    content: content
+                });
+            }
         });
     });
-
 });
 
 module.exports = router;
